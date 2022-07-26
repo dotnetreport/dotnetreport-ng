@@ -32,7 +32,7 @@ export class DotnetreportComponent implements OnInit, OnDestroy {
 
     this.http.get(getUsersAndRolesUrl).subscribe((response: any) => {
 
-        let result = response['result'];
+        let result = response;
         let vm = new reportViewModel({
             runReportUrl: this.baseServiceUrl + '/Report/Report',
             reportWizard: $("#modal-reportbuilder"),
@@ -67,7 +67,7 @@ export class DotnetreportComponent implements OnInit, OnDestroy {
         vm.init(0, result.noAccount);
 
         this.renderKOTemplates();
-        ko.applyBindings(vm, document.getElementById('dot-net-reports'));
+        ko.applyBindings(vm, document.getElementById('dot-net-report'));
 
         this.bindWindowResize(vm);
     });
