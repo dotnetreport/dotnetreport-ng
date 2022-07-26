@@ -51,11 +51,11 @@ export class DotnetreportComponent implements OnInit, OnDestroy {
             var printWindow = window.open("");
             printWindow?.document.open();
             printWindow?.document.write('<html><head>' +
-                '<link href="/app/main/theme.css" rel="stylesheet" />' +
+                '<link href="/Content/bootstrap.css" rel="stylesheet" />'+
                 '<style type="text/css">a[href]:after {content: none !important;}</style>' +
                 '</head><body>' + $('.report-inner').html() +
                 '</body></html>');
-
+           
             setTimeout(function () {
                 printWindow?.print();
                 printWindow?.close();

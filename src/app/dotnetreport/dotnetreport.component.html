@@ -53,7 +53,7 @@
                                 <a class="dropdown-item" href="#" data-bind="click: ManageFolder.deleteFolder">Delete Selected Folder</a>
                             </div>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item active" data-bind="visible: false">
                             <a href="#" class="nav-link" data-bind="click: function(){ initHeaderDesigner(); }">
                                 <span class="fa fa-arrow-up"> Report Header</span>
                             </a>
@@ -830,7 +830,7 @@
     </div>
 </div>
 </div>
-<div class="row" data-bind="if: ReportMode() == 'execute'">
+<div class="row" data-bind="if: ReportMode() == 'execute'" class="">
 
     <div data-bind="with: ReportResult">
 
@@ -851,7 +851,7 @@
                         Back to Reports
                     </button>
                     
-                    <button type="button" class="btn btn-secondary" data-bind="click: printReport">
+                    <button type="button" class="btn btn-secondary" data-bind="click: printReport, visible: false">
                         <span class="fa fa-print" aria-hidden="true"></span> Print Report
                     </button>
 
