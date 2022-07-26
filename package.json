@@ -1,6 +1,11 @@
 {
-  "name": "dotnet-report.angular",
-  "version": "0.0.0",
+  "name": "dotnetreport.angular",
+  "version": "1.0.0","keywords": [
+    "dotnet report", "dotnetreport", "angular report builder", "ad hoc report builder"
+  ],
+  "author": {
+    "name": "dotnetreport"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
