@@ -34,6 +34,7 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/fabric/dist/fabric.js",
               "node_modules/knockout/build/output/knockout-latest.js",
               "node_modules/jquery-blockui/jquery.blockUI.js",
               "node_modules/bootbox/dist/bootbox.min.js",
