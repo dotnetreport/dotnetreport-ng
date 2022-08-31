@@ -29,22 +29,24 @@ export class DotnetreportComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
-    let getUsersAndRolesUrl = this.baseServiceUrl + "/Report/GetUsersAndRoles";
+    let getUsersAndRolesUrl = this.baseServiceUrl + "/DotNetReport/GetUsersAndRoles";
     getUsersAndRolesUrl = getUsersAndRolesUrl.replace(/[?&]$/, "");
 
     this.http.get(getUsersAndRolesUrl).subscribe((response: any) => {
 
         let result = response;
         let vm = new reportViewModel({
-            runReportUrl: this.baseServiceUrl + '/Report/Report',
+            runReportUrl: this.baseServiceUrl + '/DotNetReport/Report',
             reportWizard: $("#modal-reportbuilder"),
-            lookupListUrl: this.baseServiceUrl + '/Report/GetLookupList',
-            apiUrl: this.baseServiceUrl + '/Report/CallReportApi',
-            runReportApiUrl: this.baseServiceUrl + '/Report/RunReportApi',
-            getUsersAndRolesUrl: this.baseServiceUrl + '/Report/GetUsersAndRoles',
+            lookupListUrl: this.baseServiceUrl + '/DotNetReport/GetLookupList',
+            apiUrl: this.baseServiceUrl + '/DotNetReport/CallReportApi',
+            runReportApiUrl: this.baseServiceUrl + '/DotNetReport/RunReportApi',
+            getUsersAndRolesUrl: this.baseServiceUrl + '/DotNetReport/GetUsersAndRoles',
             userSettings: result,
-            execReportUrl: this.baseServiceUrl + '/Report/RunReport',
-            samePageOnRun: true
+            execReportUrl: this.baseServiceUrl + '/DotNetReport/RunReport',
+            samePageOnRun: true,
+            runExportUrl: this.baseServiceUrl,
+            printReportUrl: this.baseServiceUrl + '/DotNetReport/ReportPrint'
         });
 
         vm.printReport = function () {
@@ -62,9 +64,6 @@ export class DotnetreportComponent implements OnInit, OnDestroy {
             }, 250);
         }
 
-        vm.downloadExcel = function () {
-            $("#downloadExcel").submit();
-        }
 
         vm.init(0, result.noAccount);
 
@@ -77,6 +76,10 @@ export class DotnetreportComponent implements OnInit, OnDestroy {
 
 ngOnDestroy() {
     ko.cleanNode(document.getElementById('dot-net-report'));
+}
+
+public init() {
+    this.ngOnInit();
 }
 
 private renderKOTemplates() {

@@ -1,7 +1,11 @@
 {
   "name": "dotnetreport.angular",
-  "version": "1.0.0","keywords": [
-    "dotnet report", "dotnetreport", "angular report builder", "ad hoc report builder"
+  "version": "1.0.1",
+  "keywords": [
+    "dotnet report",
+    "dotnetreport",
+    "angular report builder",
+    "ad hoc report builder"
   ],
   "author": {
     "name": "dotnetreport"
@@ -23,7 +27,7 @@
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
-    "dotnetreport": "^4.3.0",
+    "dotnetreport": "^4.3.5",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
